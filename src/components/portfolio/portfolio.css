@@ -24,10 +24,16 @@
   filter: blur(0.1rem);
 }
 .portfolio_content:nth-child(1) {
-  background-image: url(../../assets/work1.png);
+  background-image: url(../../assets/work0.png);
 }
 .portfolio_content:nth-child(2) {
+  background-image: url(../../assets/work1.png);
+}
+.portfolio_content:nth-child(3) {
   background-image: url(../../assets/work2.png);
+}
+.portfolio_content:nth-child(4) {
+  background-image: url(../../assets/work3.png);
 }
 .portfolio_title {
   margin-bottom: var(--mb-1);
@@ -39,6 +45,10 @@
   font-size: 0.9rem;
   font-weight: var(--font-medium);
   color: #fff;
+}
+.button_container {
+  display: flex;
+  justify-content: space-between;
 }
 .portfolio_button {
   font-size: var(--small-font-size);

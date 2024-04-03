@@ -20,12 +20,19 @@ const Backend = () => {
               <span className="skills_level">basic class</span>
             </div>
           </div>
+          <div className="skills_data">
+            <i className='bx bx-badge-check'></i>
+            <div>
+              <h3 className="skills_name">AWS</h3>
+              <span className="skills_level">basic class</span>
+            </div>
+          </div>
         </div>
         <div className="skills_group">
           <div className="skills_data">
             <i className='bx bx-badge-check'></i>
             <div>
-              <h3 className="skills_name">Ajax</h3>
+              <h3 className="skills_name">MySQL</h3>
               <span className="skills_level">basic class</span>
             </div>
           </div>

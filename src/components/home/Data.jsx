@@ -56,7 +56,7 @@ const Data = () => {
         </svg>
       </h1>
       <h3 className="home_subtitle">Frontend Developer</h3>
-      <p className="home_description">안녕하세요 저는 강동구에 거주하고있는 <br /> UI/UX 프론트엔드 개발자입니다.</p>
+      <p className="home_description">사고가 유연한 프론트엔드 개발자 박현성입니다.</p>
       <a href="#" className="button button--flex" onClick={()=>{alert('소잃고 코드를 고치면 안되겠죠 꼼꼼하게 개발합시다')}}>
         console.log( '소잃고 코드고친다' )
         <svg
