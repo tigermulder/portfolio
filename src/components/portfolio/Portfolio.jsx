@@ -38,18 +38,6 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        <div className="portfolio_content">
-          <h3 className="portfolio_title">chatting App(1인프로젝트)</h3>
-          <p className='portfolio_text'>실시간으로 메세지를 주고받을수있는 채팅앱입니다. react.js로 프론트엔드를 구성하였고 백엔드서버는 express 데이터는 mongoDB로 처리하였습니다. 다 완성되진않았고 리팩토링 중입니다.</p>
-          <div className="button_container">
-            <a href="https://tigermulder.github.io/tigerWeather/" target='_blank' rel="noopener noreferrer" className="portfolio_button">View More
-              <i className="uil uil-arrow-right portfolio_button-icon"></i>
-            </a>
-            <a href="https://github.com/tigermulder/eggChatPotato" target='_blank' rel="noopener noreferrer" className="portfolio_button">Git hub
-              <i className="uil uil-arrow-right portfolio_button-icon"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   )
