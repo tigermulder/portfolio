@@ -12,22 +12,18 @@ const Portfolio = memo(() => {
       <div className="portfolio_container container grid">
         <div className="portfolio_content">
           <h3 className="portfolio_title">review Click service</h3>
-          <p className='portfolio_text'>
-            신뢰할 수 있는 사용자 리뷰와 캠페인 참여를 기반으로 한 B2B2C 쇼핑 리워드 플랫폼입니다.<br />
-            소비자는 검증된 리뷰를 참고해 합리적인 구매를 할 수 있고,<br />
-            광고주 및 브랜드는 효과적인 상품 홍보와 리워드 기반 캠페인을 손쉽게 운영할 수 있습니다.<br /><br />
-            <strong>주요 기술스택:</strong> React, Recoil, React-query, TypeScript, Vercel<br />
-            <strong>주요 역할:</strong> 프론트엔드/백엔드 API 개발, UI/UX 설계, 배포 자동화<br />
-            <strong>주요 기능:</strong> 리뷰 작성 및 검증, 캠페인 관리, 리워드 지급, 관리자 대시보드, 반응형 웹<br />
-          </p>
-          <div className="button_container">
-            <a href="https://reviewclick-portfolio.vercel.app/" target='_blank' rel="noopener noreferrer" className="portfolio_button">{t('viewMore')}
-              <i className="uil uil-arrow-right portfolio_button-icon"></i>
-            </a>
-            <a href="https://github.com/tigermulder/reviewclick-portfolio" target='_blank' rel="noopener noreferrer" className="portfolio_button">{t('github_')}
-              <i className="uil uil-arrow-right portfolio_button-icon"></i>
-            </a>
-          </div>     
+          <p className='portfolio_text'>신뢰할 수 있는 사용자 리뷰와 캠페인 참여를 기반으로 한 B2B2C 쇼핑 리워드 플랫폼입니다.
+소비자는 검증된 리뷰를 참고해 합리적인 구매를 할 수 있고,
+광고주 및 브랜드는 효과적인 상품 홍보와 리워드 기반 캠페인을 손쉽게 운영할 수 있습니다</p>
+    <div className="button_container">
+    <a href="https://reviewclick-portfolio.vercel.app/" target='_blank' rel="noopener noreferrer" className="portfolio_button">{t('viewMore')}
+                <i className="uil uil-arrow-right portfolio_button-icon"></i>
+              </a>
+              <a href="https://github.com/tigermulder/reviewclick-portfolio" target='_blank' rel="noopener noreferrer" className="portfolio_button">{t('github_')}
+                <i className="uil uil-arrow-right portfolio_button-icon"></i>
+              </a>
+    </div>
+              
         </div>
         <div className="portfolio_content">
           <h3 className="portfolio_title">Bank WebApp(1인프로젝트)</h3>

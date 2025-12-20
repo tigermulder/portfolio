@@ -1,30 +1,33 @@
 import React from 'react'
+import { useLanguage } from '../../contexts/LanguageContext'
 import "./archive.css"
 
 const Archive = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className='archive section' id='archive'>
-      <h2 className="section_title">Archive</h2>
-      <span className="section_subtitle">My archive</span>
+      <h2 className="section_title">{t('archiveTitle')}</h2>
+      <span className="section_subtitle">{t('archiveSubtitle')}</span>
 
       <div className="archive_container container grid">
         <div className="archive_content">
           <div>
             <i className="uil uil-github-alt archive_icon"></i>
-            <h3 className="archive_title">GitHub</h3>
+            <h3 className="archive_title">{t('github')}</h3>
           </div>
-          <p className='archive_text'>GitHub 개인저장소입니다 알고리즘, 프로젝트등 저의 소스코드가있습니다</p>
-          <a href="https://github.com/tigermulder" target='_blank' rel="noopener noreferrer" className="archive_button">View More
+          <p className='archive_text'>{t('githubDesc')}</p>
+          <a href="https://github.com/tigermulder" target='_blank' rel="noopener noreferrer" className="archive_button">{t('viewMore')}
             <i className="uil uil-arrow-right archive_button-icon"></i>
           </a>
         </div>
         <div className="archive_content">
           <div>
           <i className="uil uil-blogger-alt archive_icon"></i>
-            <h3 className="archive_title">Velog</h3>
+            <h3 className="archive_title">{t('velog')}</h3>
           </div>
-          <p className='archive_text'>자료구조 및 지식공부후 기록을 남기고있는 Tech blog입니다</p>
-          <a href="https://velog.io/@tiger_front_end" target='_blank' rel="noopener noreferrer" className="archive_button">View More
+          <p className='archive_text'>{t('velogDesc')}</p>
+          <a href="https://velog.io/@tiger_front_end" target='_blank' rel="noopener noreferrer" className="archive_button">{t('viewMore')}
             <i className="uil uil-arrow-right archive_button-icon"></i>
           </a>
         </div>

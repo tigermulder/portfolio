@@ -226,13 +226,13 @@ const Chronology = () => {
             {/* [1] BHSN CLM Core AI Draft */}
             <div className="chronology_data">
               <div onClick={() => handleModalToggle(1)} className="chronology_data-project">
-                <h3 className="chronology_title">🤖 BHSN, Allibee</h3>
+                <h3 className="chronology_title">🤖 BHSN CLM Core AI Draft</h3>
                 <span className="chronology_subtitle">서울특별시</span>
                 <div className="chronology_calender">
                   <i className="uil uil-calendar-alt"></i> 2025.07-현재
                 </div>
                 <p className="chronology_arrow_box left">
-                  BHSN에서 어떤것을 경험하고 변화했는지 알아볼까요? Click !
+                  BHSN CLM Core AI Draft Project에서 어떤것을 경험하고 변화했는지 알아볼까요? Click !
                 </p>
               </div>
               <div>

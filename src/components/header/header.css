@@ -35,8 +35,8 @@
     content: "";
     position: absolute;
     top:50%;
-    left: 0;
-    width: 100%;
+    left: -10%;
+    width: 120%;
     height: 1px; 
     background: #bf45ff;
     opacity: 1;
@@ -46,8 +46,8 @@
     content: "";
     position: absolute;
     top:50%;
-    left: 0;
-    width: 100%;
+    left: -10%;
+    width: 120%;
     height: 1px; 
     background: #bf45ff;
     opacity: 0;
@@ -58,6 +58,9 @@
 .nav_toggle {
   display: none;
 }
+
+
+
 /* Active link */
 .active-link.nav_link:before {
   opacity: 1;
@@ -118,6 +121,8 @@
   .nav_toggle {
     display: block;
   }
+
+
 }
 /* For small devices */
 @media screen and (max-width: 350px) {

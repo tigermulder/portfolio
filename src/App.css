@@ -1,32 +1,76 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+/*-----------------------------------------------------*/
+/*              1) 기본(라이트) 테마 변수              */
+/*-----------------------------------------------------*/
 :root {
   --header-height: 3rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
-  --body-color: hsl(var(--hue), var(--sat), 98%);
-  --container-color: #fff;
+  /*========== Modern Color Palette ==========*/
+  /* Primary Gradient Colors */
+  --primary-gradient: linear-gradient(135deg, #6487e0 0%, #6341ac 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  
+  /* Modern Color Variables */
+  --hue: 230;
+  --sat: 70%;
+  --primary-color: hsl(var(--hue), var(--sat), 60%);
+  --primary-color-alt: hsl(var(--hue), var(--sat), 55%);
+  
+  /* 라이트 모드 기본 값 */
+  --title-color: hsl(220, 40%, 15%);
+  --title-color-dark: hsl(220, 50%, 10%);
+  --text-color: hsl(220, 15%, 45%);
+  --text-color-light: hsl(220, 15%, 65%);
+  --body-color: hsl(220, 60%, 98%);
+  --container-color: #ffffff;
+  --border-color: hsl(220, 20%, 90%);
+  
+  /* Modern UI Colors */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
 
   /*========== Font and typography ==========*/
-  --body-font: "Poppins", sans-serif;
+  --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --heading-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  /*========== Modern Shadows & Effects ==========*/
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /*========== Glass Effect ==========*/
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --backdrop-blur: blur(16px);
+  
+  /*========== Border Radius ==========*/
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
 
   /*.5rem = 8px | 1rem = 16px ...*/
-  --big-font-size: 3.5rem;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-  --tiny-font-size: 0.7rem;
+  --font-scale: 1; /* 폰트 크기 조절을 위한 변수 */
+  --big-font-size: calc(3.5rem * var(--font-scale));
+  --h1-font-size: calc(2.25rem * var(--font-scale));
+  --h2-font-size: calc(1.5rem * var(--font-scale));
+  --h3-font-size: calc(1.25rem * var(--font-scale));
+  --normal-font-size: calc(1rem * var(--font-scale));
+  --small-font-size: calc(0.875rem * var(--font-scale));
+  --smaller-font-size: calc(0.813rem * var(--font-scale));
+  --tiny-font-size: calc(0.7rem * var(--font-scale));
 
   /*========== Font weight ==========*/
   --font-normal: 400;
@@ -50,16 +94,59 @@
   --z-modal: 1000;
 }
 
-/* Responsive typography */
+/*-----------------------------------------------------*/
+/*           2) 시스템 다크 모드에 따른 덮어쓰기       */
+/*-----------------------------------------------------*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 시스템이 dark로 설정되어 있으면 자동 적용 */
+    --title-color: hsl(220, 20%, 90%);
+    --title-color-dark: hsl(220, 20%, 95%);
+    --text-color: hsl(220, 15%, 75%);
+    --text-color-light: hsl(220, 15%, 65%);
+    --body-color: hsl(220, 30%, 8%);
+    --container-color: hsl(220, 25%, 12%);
+    --border-color: hsl(220, 20%, 20%);
+  }
+}
+
+/*-----------------------------------------------------*/
+/*        3) 사용자가 직접 라이트/다크를 강제할 때      */
+/*-----------------------------------------------------*/
+/* 라이트 테마 강제 */
+body.light-theme {
+  --title-color: hsl(220, 40%, 15%);
+  --title-color-dark: hsl(220, 50%, 10%);
+  --text-color: hsl(220, 15%, 45%);
+  --text-color-light: hsl(220, 15%, 65%);
+  --body-color: hsl(220, 60%, 98%);
+  --container-color: #ffffff;
+  --border-color: hsl(220, 20%, 90%);
+}
+
+/* 다크 테마 강제 */
+body.dark-theme {
+  --title-color: hsl(220, 20%, 90%);
+  --title-color-dark: hsl(220, 20%, 95%);
+  --text-color: hsl(220, 15%, 75%);
+  --text-color-light: hsl(220, 15%, 65%);
+  --body-color: hsl(220, 30%, 8%);
+  --container-color: hsl(220, 25%, 12%);
+  --border-color: hsl(220, 20%, 20%);
+}
+
+/*-----------------------------------------------------*/
+/*        4) Responsive typography                    */
+/*-----------------------------------------------------*/
 @media screen and (max-width: 992px) {
   :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
+    --big-font-size: calc(2.75rem * var(--font-scale));
+    --h1-font-size: calc(1.5rem * var(--font-scale));
+    --h2-font-size: calc(1.25rem * var(--font-scale));
+    --h3-font-size: calc(1rem * var(--font-scale));
+    --normal-font-size: calc(0.938rem * var(--font-scale));
+    --small-font-size: calc(0.813rem * var(--font-scale));
+    --smaller-font-size: calc(0.75rem * var(--font-scale));
   }
 }
 
@@ -86,13 +173,192 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+p {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  word-spacing: 0.1em;
+  margin-bottom: 1em;
+}
+
+/*=============== LANGUAGE-SPECIFIC TYPOGRAPHY ===============*/
+/* 한국어 타이포그래피 개선 */
+[data-language="ko"] {
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  word-spacing: 0.08em;
+}
+
+[data-language="ko"] h1,
+[data-language="ko"] h2,
+[data-language="ko"] h3 {
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+[data-language="ko"] p {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  word-spacing: 0.08em;
+}
+
+/* 영어 타이포그래피 */
+[data-language="en"] {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+
+[data-language="en"] h1,
+[data-language="en"] h2,
+[data-language="en"] h3 {
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+[data-language="en"] p {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+
+/*=============== IMPROVED TEXT SPACING ===============*/
+/* About section description */
+.about_description {
+  line-height: 1.8 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.1em !important;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+[data-language="ko"] .about_description {
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.1em !important;
+}
+
+/* Home description */
+.home_description {
+  line-height: 1.7 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.1em !important;
+}
+
+[data-language="ko"] .home_description {
+  line-height: 1.6 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+/* Portfolio text */
+.portfolio_text {
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+[data-language="ko"] .portfolio_text {
+  line-height: 1.6 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+/* Archive text */
+.archive_text {
+  line-height: 1.6 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+[data-language="ko"] .archive_text {
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+/* Contact form improvements */
+.contact_form-input,
+.contact_form-tag {
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+[data-language="ko"] .contact_form-input,
+[data-language="ko"] .contact_form-tag {
+  letter-spacing: 0.01em;
+}
+
+/* Skills section improvements */
+.skills_name,
+.skills_level {
+  letter-spacing: 0.01em;
+}
+
+[data-language="ko"] .skills_name,
+[data-language="ko"] .skills_level {
+  letter-spacing: 0.01em;
+}
+
+/* Navigation links */
+.nav_link {
+  letter-spacing: 0.01em;
+}
+
+[data-language="ko"] .nav_link {
+  letter-spacing: 0.01em;
+}
+
+/* Button text */
+.button {
+  letter-spacing: 0.01em;
+}
+
+[data-language="ko"] .button {
+  letter-spacing: 0.01em;
+}
+
+/*=============== CONTAINER SPACING IMPROVEMENTS ===============*/
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* 한국어일 때 추가 여백 */
+[data-language="ko"] .section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/* 긴 텍스트 섹션들의 여백 개선 */
+.about_data,
+.portfolio_content,
+.archive_content {
+  margin-bottom: 2rem;
+}
+
+[data-language="ko"] .about_data,
+[data-language="ko"] .portfolio_content,
+[data-language="ko"] .archive_content {
+  margin-bottom: 2rem;
 }
 
 h1,
 h2,
 h3 {
   color: var(--title-color);
+  font-family: var(--heading-font);
   font-weight: var(--font-semi-bold);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 ul {
@@ -117,17 +383,44 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 9rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .section_title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
 }
 
 .section_subtitle {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: 4rem;
+  color: var(--text-color-light);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .section_title,
@@ -147,40 +440,65 @@ img {
   gap: 1.5rem;
 }
 
-/*=============== DARK THEME ===============*/
-body.dark-theme {
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 95%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 100%);
-  --text-color: hsl(var(--hue), var(--sat), 86%);
-  --body-color: hsl(var(--hue), var(--sat), 11%);
-  --container-color: hsl(var(--hue), var(--sat),16%);
-}
-
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--title-color);
-  color: var(--container-color);
-  padding: 1.25rem 2rem;
-  border-radius: 0.8rem;
-  font-weight: var(--font-medium);
+  background: var(--primary-gradient);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.025em;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
   vertical-align: middle;
 }
 
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
 .button:hover {
-  background-color: var(--title-color-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2xl);
+  background: var(--secondary-gradient);
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:active {
+  transform: translateY(0);
 }
 
 .button_icon {
   margin-left: var(--mb-0-5);
+  transition: transform 0.3s ease;
+}
+
+.button:hover .button_icon {
+  transform: translateX(4px);
 }
 
 .button--flex {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -217,6 +535,7 @@ body.dark-theme {
 }
 
 @media screen and (max-width: 576px) {
+  /* 여백 / 폰트 사이즈 등 필요한 미디어 쿼리를 추가 가능 */
 }
 
 /* For small devices */

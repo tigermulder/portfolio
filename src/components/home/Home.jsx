@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import "./home.css"
 import Social from './Social'
 import Data from './Data'
 import ScrollDown from './ScrollDown'
 
-const Home = () => {
+const Home = memo(() => {
   return (
     <section className="home section" id="home">
       <div className="home_container container grid">
@@ -17,6 +17,8 @@ const Home = () => {
       </div>
     </section>
   )
-}
+});
+
+Home.displayName = 'Home';
 
 export default Home
