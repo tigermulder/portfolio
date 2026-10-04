@@ -142,11 +142,28 @@ const Chronology = () => {
             }
           >
             <div className="chronology_data">
+              <div></div>
+              <div>
+                <span className="chronology_rounder"></span>
+                <span className="chronology_line"></span>
+              </div>
+              <div>
+                <h3 className="chronology_title">밀리언웨어 (프리랜서)</h3>
+                <span className="chronology_subtitle">
+                  국내 대형 반도체 기업 클라우드 플랫폼
+                </span>
+                <div className="chronology_calender">
+                  <i className="uil uil-calendar-alt"></i> 2026.07-현재
+                </div>
+              </div>
+            </div>
+
+            <div className="chronology_data">
               <div>
                 <h3 className="chronology_title">BHSN, CLM CORE UNIT</h3>
                 <span className="chronology_subtitle">서울특별시</span>
                 <div className="chronology_calender">
-                  <i className="uil uil-calendar-alt"></i> 2025.07-현재
+                  <i className="uil uil-calendar-alt"></i> 2025.07-2026.07
                 </div>
               </div>
               <div>
@@ -223,13 +240,141 @@ const Chronology = () => {
                 : "chronology_content"
             }
           >
+            {/* [8] Private Cloud Platform */}
+            <div className="chronology_data">
+              <div></div>
+              <div>
+                <span className="chronology_rounder"></span>
+                <span className="chronology_line"></span>
+              </div>
+              <div onClick={() => handleModalToggle(8)} className="chronology_data-project">
+                <h3 className="chronology_title">☁️ 사내 클라우드 플랫폼 개발·운영</h3>
+                <span className="chronology_subtitle">밀리언웨어 · 프리랜서</span>
+                <div className="chronology_calender">
+                  <i className="uil uil-calendar-alt"></i> 2026.07-현재
+                </div>
+                <p className="chronology_arrow_box right">
+                  클라우드 플랫폼에서 수행한 풀스택 개발과 운영 경험을 확인해보세요. Click !
+                </p>
+              </div>
+            </div>
+            {/* Modal */}
+            <div
+              className={
+                activeModal === 8
+                  ? "chronology_modal active-modal"
+                  : "chronology_modal"
+              }
+            >
+              <div className="chronology_modal-content">
+                <i
+                  onClick={() => handleModalToggle(0)}
+                  className="uil uil-times chronology_modal-close"
+                ></i>
+
+                <h3 className="chronology_modal-title">
+                  ☁️ 사내 프라이빗 클라우드 플랫폼
+                </h3>
+                <p className="chronology_modal-description">
+                  국내 대형 반도체 기업의 클라우드 플랫폼 풀스택 개발 및 Kubernetes 기반 서비스 운영
+                </p>
+
+                <ul className="chronology_modal-services grid">
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      React 18, TypeScript, Vite, pnpm 기반 프론트엔드 개선 및 신규 기능 개발
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      Java 11, Maven, Gradle, MyBatis, Oracle 기반 API 및 데이터 처리
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      프로젝트 생성 시 자원관리 계정을 직접 검색하고 매핑할 수 있는 UI 및 API 개발
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      별도 요청을 통한 수동 매핑 절차를 사용자 셀프서비스 방식으로 개선
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      프로젝트별 CPU, Memory, GPU, Pod 가용 자원 조회 API 개발
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      문자열 비교 기반 생성·승인 판단 로직을 백엔드 Enum 기반 정책으로 개선
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      생성 불가·수동 승인·자동 승인 흐름을 API 응답으로 일관되게 관리
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      요청·응답 DTO와 유효성 검사 확인, 프론트엔드 연동 테스트 및 개발 환경 배포
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      Kubernetes Pod 상태 확인, 로그 분석, 배포, 재시작, 리소스 조정 및 장애 대응
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      Docker, Helm, Argo CD, Jenkins, Grafana 기반 배포·운영·모니터링
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      Claude Code와 사내 승인 LLM을 활용한 일감 분배·프론트엔드·백엔드·DBA·Git 에이전트 구성
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      node-oracledb와 테이블 관계 정보를 활용한 SQL 및 MyBatis Mapper 작성 지원 환경 구축
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      에이전트가 생성한 코드와 SQL을 직접 검토·테스트한 뒤 개발 환경에 반영
+                    </p>
+                  </li>
+                  <li className="chronology_modal-service">
+                    <i className="uil uil-check-circle chronology_modal-icon"></i>
+                    <p className="chronology_modal-info">
+                      브랜치 생성부터 커밋·푸시·머지까지 이어지는 Git 워크플로 자동화
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             {/* [1] BHSN CLM Core AI Draft */}
             <div className="chronology_data">
               <div onClick={() => handleModalToggle(1)} className="chronology_data-project">
                 <h3 className="chronology_title">🤖 BHSN, Allibee</h3>
                 <span className="chronology_subtitle">서울특별시</span>
                 <div className="chronology_calender">
-                  <i className="uil uil-calendar-alt"></i> 2025.07-현재
+                  <i className="uil uil-calendar-alt"></i> 2025.07-2026.07
                 </div>
                 <p className="chronology_arrow_box left">
                   BHSN에서 어떤것을 경험하고 변화했는지 알아볼까요? Click !

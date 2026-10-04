@@ -10,24 +10,25 @@
 
   /*========== Modern Color Palette ==========*/
   /* Primary Gradient Colors */
-  --primary-gradient: linear-gradient(135deg, #6487e0 0%, #6341ac 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --primary-gradient: linear-gradient(135deg, #5b6ee1 0%, #6d5dfb 100%);
+  --secondary-gradient: linear-gradient(135deg, #4f68d8 0%, #5b4bc7 100%);
+  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
   
   /* Modern Color Variables */
   --hue: 230;
   --sat: 70%;
-  --primary-color: hsl(var(--hue), var(--sat), 60%);
-  --primary-color-alt: hsl(var(--hue), var(--sat), 55%);
+  --primary-color: #6d5dfb;
+  --primary-color-alt: #5b4bc7;
+  --primary-soft: rgba(109, 93, 251, 0.1);
   
   /* 라이트 모드 기본 값 */
-  --title-color: hsl(220, 40%, 15%);
-  --title-color-dark: hsl(220, 50%, 10%);
-  --text-color: hsl(220, 15%, 45%);
-  --text-color-light: hsl(220, 15%, 65%);
-  --body-color: hsl(220, 60%, 98%);
+  --title-color: #1e293b;
+  --title-color-dark: #111827;
+  --text-color: #5f6b80;
+  --text-color-light: #8491a8;
+  --body-color: #f6f8fc;
   --container-color: #ffffff;
-  --border-color: hsl(220, 20%, 90%);
+  --border-color: #dce3ef;
   
   /* Modern UI Colors */
   --success-color: #10b981;
@@ -100,13 +101,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* 시스템이 dark로 설정되어 있으면 자동 적용 */
-    --title-color: hsl(220, 20%, 90%);
-    --title-color-dark: hsl(220, 20%, 95%);
-    --text-color: hsl(220, 15%, 75%);
-    --text-color-light: hsl(220, 15%, 65%);
-    --body-color: hsl(220, 30%, 8%);
-    --container-color: hsl(220, 25%, 12%);
-    --border-color: hsl(220, 20%, 20%);
+    --title-color: #e5e7eb;
+    --title-color-dark: #f8fafc;
+    --text-color: #aab4c5;
+    --text-color-light: #8491a8;
+    --body-color: #0b1120;
+    --container-color: #151e2f;
+    --border-color: #26334a;
+    --primary-soft: rgba(109, 93, 251, 0.16);
   }
 }
 
@@ -115,24 +117,26 @@
 /*-----------------------------------------------------*/
 /* 라이트 테마 강제 */
 body.light-theme {
-  --title-color: hsl(220, 40%, 15%);
-  --title-color-dark: hsl(220, 50%, 10%);
-  --text-color: hsl(220, 15%, 45%);
-  --text-color-light: hsl(220, 15%, 65%);
-  --body-color: hsl(220, 60%, 98%);
+  --title-color: #1e293b;
+  --title-color-dark: #111827;
+  --text-color: #5f6b80;
+  --text-color-light: #8491a8;
+  --body-color: #f6f8fc;
   --container-color: #ffffff;
-  --border-color: hsl(220, 20%, 90%);
+  --border-color: #dce3ef;
+  --primary-soft: rgba(109, 93, 251, 0.1);
 }
 
 /* 다크 테마 강제 */
 body.dark-theme {
-  --title-color: hsl(220, 20%, 90%);
-  --title-color-dark: hsl(220, 20%, 95%);
-  --text-color: hsl(220, 15%, 75%);
-  --text-color-light: hsl(220, 15%, 65%);
-  --body-color: hsl(220, 30%, 8%);
-  --container-color: hsl(220, 25%, 12%);
-  --border-color: hsl(220, 20%, 20%);
+  --title-color: #e5e7eb;
+  --title-color-dark: #f8fafc;
+  --text-color: #aab4c5;
+  --text-color-light: #8491a8;
+  --body-color: #0b1120;
+  --container-color: #151e2f;
+  --border-color: #26334a;
+  --primary-soft: rgba(109, 93, 251, 0.16);
 }
 
 /*-----------------------------------------------------*/
@@ -406,11 +410,17 @@ img {
   font-family: var(--heading-font);
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   position: relative;
+}
+
+.section_title::after {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 6px;
+  margin: 1.25rem auto 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--primary-gradient);
 }
 
 .section_subtitle {

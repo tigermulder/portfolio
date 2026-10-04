@@ -38,7 +38,7 @@
     left: -10%;
     width: 120%;
     height: 1px; 
-    background: #bf45ff;
+    background: var(--primary-color);
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
@@ -49,7 +49,7 @@
     left: -10%;
     width: 120%;
     height: 1px; 
-    background: #bf45ff;
+    background: var(--primary-color);
     opacity: 0;
   }
 }
